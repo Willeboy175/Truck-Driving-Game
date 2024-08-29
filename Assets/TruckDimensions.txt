@@ -1,0 +1,37 @@
+Lastbil
+Skåp: 725, 260, 320 mm
+
+Mått och vikter lastbil:
+Längd: 9851 mm
+Bredd: 2590 mm
+Höjd: 4469 mm
+Axelavstånd 4750mm
+Lastutrymmets längd: 7360 mm
+Lastutrymmets bredd: 2546 mm
+Lastutrymmets höjd: 3160 mm
+Bakre överhäng: 2425 mm
+Kopplingsavstånd: 9645 mm
+
+Tjänstevikt: 13035 kg
+Totalvikt: 29500 kg
+Max lastvikt: 16465 kg
+Tillåten lastvikt: 14965 kg
+Skattevikt: 28000 kg 
+
+Däck, axel 1/3 
+Bredd 385 mm
+Profil 211 mm
+Fälg 571,5 mm
+tot höjd 995 mm
+
+Däck Driv
+Bredd 315 mm
+Tot bredd ca 637 mm
+Profil 220 mm
+Fälg 571,5 mm
+Tot höjd ca 995 mm 
+
+
+Släp
+
+Yttre med dragkrok: 14500, 2600, 4480 mm
