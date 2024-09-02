@@ -35,3 +35,10 @@ Tot höjd ca 995 mm
 Släp
 
 Yttre med dragkrok: 14500, 2600, 4480 mm
+
+Däck
+Bredd 265 mm
+Tot bredd 540 mm
+Profil 185,5 mm
+Fälg 495 mm
+Tot Höjd ca 680 mm
