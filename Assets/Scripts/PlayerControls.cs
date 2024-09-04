@@ -38,12 +38,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Brake"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""7feab6aa-ece4-4eec-a958-8eed0b0d1c08"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Analog"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Steering"",
