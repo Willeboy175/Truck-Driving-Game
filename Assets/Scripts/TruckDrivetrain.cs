@@ -11,6 +11,8 @@ public class TruckDrivetrain : ControlsScript
     public float force;
     public float throttleValue;
 
+    public double speed;
+
     public float rightRPM;
     public float leftRPM;
 
@@ -23,12 +25,14 @@ public class TruckDrivetrain : ControlsScript
     public float rightSidewaysSlip;
     public float leftSidewaysSlip;
 
+    private Rigidbody rb;
     private WheelCollider rightCollider;
     private WheelCollider leftCollider;
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         rightCollider = rightWheel.GetComponent<WheelCollider>();
         leftCollider = leftWheel.GetComponent<WheelCollider>();
     }
@@ -54,6 +58,8 @@ public class TruckDrivetrain : ControlsScript
     void Update()
     {
         throttleValue = throttle.ReadValue<float>();
+
+        speed = rb.velocity.magnitude * 3.6;
 
         rightRPM = rightCollider.rpm;
         leftRPM = leftCollider.rpm;
