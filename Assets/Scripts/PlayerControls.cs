@@ -38,17 +38,26 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Brake"",
-                    ""type"": ""Value"",
+                    ""type"": ""Button"",
                     ""id"": ""7feab6aa-ece4-4eec-a958-8eed0b0d1c08"",
-                    ""expectedControlType"": ""Analog"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""Steering"",
                     ""type"": ""Value"",
                     ""id"": ""5c199864-cf08-4041-b9d9-acc32d8c6fa0"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Shifting"",
+                    ""type"": ""Value"",
+                    ""id"": ""c9eab216-fd2b-424e-8b68-6a40a52f4a58"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -165,6 +174,72 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Steering"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Keyboard"",
+                    ""id"": ""4ee948cd-dac1-4c81-b7fe-12402d9b700d"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shifting"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""212abe7f-3fe1-424b-ab00-30af6d2c7076"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shifting"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""dc9505ba-b3e5-4bd7-a7ab-eb3b4f5bb93f"",
+                    ""path"": ""<Keyboard>/ctrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shifting"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Gamepad"",
+                    ""id"": ""200ca247-748e-48ea-a6ae-fb881aaae25c"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shifting"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""1f0ad781-c872-4aac-a757-d6be36d24c82"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shifting"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""1bb394a5-83cb-4f15-b047-030b6a71b428"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shifting"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -176,6 +251,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Driving_Throttle = m_Driving.FindAction("Throttle", throwIfNotFound: true);
         m_Driving_Brake = m_Driving.FindAction("Brake", throwIfNotFound: true);
         m_Driving_Steering = m_Driving.FindAction("Steering", throwIfNotFound: true);
+        m_Driving_Shifting = m_Driving.FindAction("Shifting", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -240,6 +316,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Driving_Throttle;
     private readonly InputAction m_Driving_Brake;
     private readonly InputAction m_Driving_Steering;
+    private readonly InputAction m_Driving_Shifting;
     public struct DrivingActions
     {
         private @PlayerControls m_Wrapper;
@@ -247,6 +324,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Throttle => m_Wrapper.m_Driving_Throttle;
         public InputAction @Brake => m_Wrapper.m_Driving_Brake;
         public InputAction @Steering => m_Wrapper.m_Driving_Steering;
+        public InputAction @Shifting => m_Wrapper.m_Driving_Shifting;
         public InputActionMap Get() { return m_Wrapper.m_Driving; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -265,6 +343,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Steering.started += instance.OnSteering;
             @Steering.performed += instance.OnSteering;
             @Steering.canceled += instance.OnSteering;
+            @Shifting.started += instance.OnShifting;
+            @Shifting.performed += instance.OnShifting;
+            @Shifting.canceled += instance.OnShifting;
         }
 
         private void UnregisterCallbacks(IDrivingActions instance)
@@ -278,6 +359,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Steering.started -= instance.OnSteering;
             @Steering.performed -= instance.OnSteering;
             @Steering.canceled -= instance.OnSteering;
+            @Shifting.started -= instance.OnShifting;
+            @Shifting.performed -= instance.OnShifting;
+            @Shifting.canceled -= instance.OnShifting;
         }
 
         public void RemoveCallbacks(IDrivingActions instance)
@@ -300,5 +384,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnThrottle(InputAction.CallbackContext context);
         void OnBrake(InputAction.CallbackContext context);
         void OnSteering(InputAction.CallbackContext context);
+        void OnShifting(InputAction.CallbackContext context);
     }
 }

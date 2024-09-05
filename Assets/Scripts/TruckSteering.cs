@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Animations;
 using UnityEngine.InputSystem;
 
-public class TruckSteering : MonoBehaviour
+public class TruckSteering : ControlsScript
 {
     public GameObject rightWheel;
     public GameObject leftWheel;
@@ -18,9 +18,6 @@ public class TruckSteering : MonoBehaviour
     private WheelCollider rightCollider;
     private WheelCollider leftCollider;
 
-    private PlayerControls controls;
-    private InputAction steer;
-
     public float inputValue;
     public float steerValue;
 
@@ -31,19 +28,19 @@ public class TruckSteering : MonoBehaviour
         leftCollider = leftWheel.GetComponent<WheelCollider>();
     }
 
-    private void Awake()
+    protected override void Awake()
     {
-        controls = new PlayerControls();
-        controls.Driving.Enable();
-        steer = controls.Driving.Steering;
+        drive = new PlayerControls();
+        drive.Driving.Enable();
+        steer = drive.Driving.Steering;
     }
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
         steer.Enable();
     }
 
-    private void OnDisable()
+    protected override void OnDisable()
     {
         steer.Disable();
     }

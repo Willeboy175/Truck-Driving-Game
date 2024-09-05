@@ -317,6 +317,62 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1230642039677985623, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927365995840196002, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1927365995840196002, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_ForwardFriction.m_Stiffness
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2174448608363197402, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2439278194688373616, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2495363873171054468, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3453223406582752437, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3797601400601007667, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5168726494211514111, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631644398612641116, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5809517609396432708, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996164909392514107, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7427621523075398041, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7723660885377741927, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8035599233585534438, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15
@@ -360,6 +416,22 @@ PrefabInstance:
     - target: {fileID: 8270692544852619213, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
       propertyPath: m_Name
       value: TruckWithTrailer
+      objectReference: {fileID: 0}
+    - target: {fileID: 8536578477747792072, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8536578477747792072, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_ForwardFriction.m_Stiffness
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8750626855700189926, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9145989274021532451, guid: a1f163cd4c302a9489b085623fd3cd77, type: 3}
+      propertyPath: m_ForceAppPointDistance
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

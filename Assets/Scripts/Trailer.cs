@@ -22,6 +22,11 @@ public class Trailer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    void FixedUpdate()
+    {
         targetRotation = drawbar.localEulerAngles;
 
         targetRotation.x = 0;

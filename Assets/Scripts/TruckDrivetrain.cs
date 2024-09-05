@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class TruckDrivetrain : MonoBehaviour
+public class TruckDrivetrain : ControlsScript
 {
     public GameObject rightWheel;
     public GameObject leftWheel;
@@ -11,11 +11,20 @@ public class TruckDrivetrain : MonoBehaviour
     public float force;
     public float throttleValue;
 
+    public float rightRPM;
+    public float leftRPM;
+
+    public float rightForwardforce;
+    public float leftForwardforce;
+
+    public float rightForwardSlip;
+    public float leftForwardSlip;
+
+    public float rightSidewaysSlip;
+    public float leftSidewaysSlip;
+
     private WheelCollider rightCollider;
     private WheelCollider leftCollider;
-
-    private PlayerControls controls;
-    private InputAction throttle;
 
     // Start is called before the first frame update
     void Start()
@@ -24,19 +33,19 @@ public class TruckDrivetrain : MonoBehaviour
         leftCollider = leftWheel.GetComponent<WheelCollider>();
     }
 
-    private void Awake()
+    protected override void Awake()
     {
-        controls = new PlayerControls();
-        controls.Driving.Enable();
-        throttle = controls.Driving.Throttle;
+        drive = new PlayerControls();
+        drive.Driving.Enable();
+        throttle = drive.Driving.Throttle;
     }
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
         throttle.Enable();
     }
 
-    private void OnDisable()
+    protected override void OnDisable()
     {
         throttle.Disable();
     }
@@ -45,6 +54,22 @@ public class TruckDrivetrain : MonoBehaviour
     void Update()
     {
         throttleValue = throttle.ReadValue<float>();
+
+        rightRPM = rightCollider.rpm;
+        leftRPM = leftCollider.rpm;
+
+        rightCollider.GetGroundHit(out WheelHit rightHit);
+        leftCollider.GetGroundHit(out WheelHit leftHit);
+
+        rightForwardforce = rightHit.force;
+        leftForwardforce = leftHit.force;
+
+        rightForwardSlip = rightHit.forwardSlip;
+        leftForwardSlip = leftHit.forwardSlip;
+
+        rightSidewaysSlip = rightHit.sidewaysSlip;
+        leftSidewaysSlip = leftHit.sidewaysSlip;
+
     }
 
     void FixedUpdate()
