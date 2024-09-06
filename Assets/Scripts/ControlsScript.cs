@@ -23,7 +23,6 @@ public class ControlsScript : MonoBehaviour
         controls = new PlayerControls();
 
         drive = controls.Driving;
-        drive.Enable();
         throttle = controls.Driving.Throttle;
         brake = controls.Driving.Brake;
         steer = controls.Driving.Steering;
@@ -44,5 +43,10 @@ public class ControlsScript : MonoBehaviour
     protected virtual void Update()
     {
         
+    }
+
+    protected virtual void FixedUpdate()
+    {
+
     }
 }

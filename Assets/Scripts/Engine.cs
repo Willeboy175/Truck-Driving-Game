@@ -7,10 +7,11 @@ public class Engine : MonoBehaviour
 {
     [Tooltip("torque value for every 100 rpm")]
     public float[] torqueValues;
+    public int maxTorque;
     public float idleRPM;
-    public float maxRPM;
     public float ShiftUpRPM;
     public float ShiftDownRPM;
+
     [Space]
 
     [Header("DebugValues")]

@@ -32,6 +32,31 @@ Profil 220 mm
 Fälg 571,5 mm
 Tot höjd ca 995 mm 
 
+Motor: 
+
+Scania DC13 490hk 2550nm
+torque_curve[]: (300, 0)
+torque_curve[]: (440, 0.5)
+torque_curve[]: (1000, 1)
+torque_curve[]: (1300, 1)
+torque_curve[]: (1400, 0.94)
+torque_curve[]: (1600, 0.83)
+torque_curve[]: (1800, 0.74)
+torque_curve[]: (1900, 0.71)
+torque_curve[]: (2400, 0.4)
+torque_curve[]: (2600, 0)
+
+Scania DC16 730hk 3500nm
+torque_curve[]: (300, 0)
+torque_curve[]: (440, 0.5)
+torque_curve[]: (1000, 1)
+torque_curve[]: (1400, 1)
+torque_curve[]: (1600, 0.9)
+torque_curve[]: (1800, 0.815)
+torque_curve[]: (1900, 0.78)
+torque_curve[]: (2400, 0.4)
+torque_curve[]: (2600, 0)
+
 
 Växellåda: 
 

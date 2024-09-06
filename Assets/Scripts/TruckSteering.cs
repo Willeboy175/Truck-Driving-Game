@@ -31,6 +31,7 @@ public class TruckSteering : ControlsScript
     protected override void Awake()
     {
         base.Awake();
+        drive.Enable();
     }
 
     protected override void OnEnable()
@@ -51,7 +52,7 @@ public class TruckSteering : ControlsScript
         steerValue = Mathf.MoveTowards(steerValue, inputValue, steerSpeed);
     }
 
-    void FixedUpdate()
+    protected override void FixedUpdate()
     {
         WheelSteer(rightCollider, rightWheel, steerValue, outerSteerAngle, innerSteerAngle, invert, true); // Right wheel
         WheelSteer(leftCollider, leftWheel, steerValue, outerSteerAngle, innerSteerAngle, invert, false); // Left wheel

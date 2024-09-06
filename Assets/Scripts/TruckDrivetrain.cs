@@ -40,6 +40,7 @@ public class TruckDrivetrain : ControlsScript
     public float rightSidewaysSlip;
     public float leftSidewaysSlip;
 
+    protected Engine engine;
     protected Rigidbody rb;
     protected WheelCollider rightCollider;
     protected WheelCollider leftCollider;
@@ -48,6 +49,7 @@ public class TruckDrivetrain : ControlsScript
     protected override void Start()
     {
         rb = GetComponent<Rigidbody>();
+        engine = GetComponent<Engine>();
 
         rightCollider = rightWheel.GetComponent<WheelCollider>();
         leftCollider = leftWheel.GetComponent<WheelCollider>();
@@ -56,6 +58,7 @@ public class TruckDrivetrain : ControlsScript
     protected override void Awake()
     {
         base.Awake();
+        drive.Enable();
     }
 
     protected override void OnEnable()
@@ -82,10 +85,15 @@ public class TruckDrivetrain : ControlsScript
         DebugValues();
     }
 
-    protected virtual void FixedUpdate()
+    protected override void FixedUpdate()
     {
         rightCollider.motorTorque = throttleValue * force;
         leftCollider.motorTorque = throttleValue * force;
+
+        rightRPM = rightCollider.rpm;
+        leftRPM = leftCollider.rpm;
+
+        float engineRPM = engine.GetCurrentRPM(rightRPM, leftRPM, 2);
     }
 
     protected virtual float Shift(int gear, float[] ratios, float diffRatio, float delay)
@@ -98,9 +106,6 @@ public class TruckDrivetrain : ControlsScript
     protected virtual void DebugValues()
     {
         speed = rb.velocity.magnitude * 3.6;
-
-        rightRPM = rightCollider.rpm;
-        leftRPM = leftCollider.rpm;
 
         rightCollider.GetGroundHit(out WheelHit rightHit);
         leftCollider.GetGroundHit(out WheelHit leftHit);
