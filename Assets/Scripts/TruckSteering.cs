@@ -22,7 +22,7 @@ public class TruckSteering : ControlsScript
     public float steerValue;
 
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         rightCollider = rightWheel.GetComponent<WheelCollider>();
         leftCollider = leftWheel.GetComponent<WheelCollider>();
@@ -30,9 +30,7 @@ public class TruckSteering : ControlsScript
 
     protected override void Awake()
     {
-        drive = new PlayerControls();
-        drive.Driving.Enable();
-        steer = drive.Driving.Steering;
+        base.Awake();
     }
 
     protected override void OnEnable()
@@ -46,7 +44,7 @@ public class TruckSteering : ControlsScript
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         inputValue = steer.ReadValue<float>();
 
@@ -60,7 +58,7 @@ public class TruckSteering : ControlsScript
     }
 
     // If rightOrLeft is true that means it is the right wheel and vice versa
-    void WheelSteer(WheelCollider wheel, GameObject model, float target, float outerAngle, float innerAngle, bool invert, bool rightOrLeft)
+    protected virtual void WheelSteer(WheelCollider wheel, GameObject model, float target, float outerAngle, float innerAngle, bool invert, bool rightOrLeft)
     {
         float steerTarget = 0;
 

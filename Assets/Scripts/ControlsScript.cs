@@ -5,21 +5,29 @@ using UnityEngine.InputSystem;
 
 public class ControlsScript : MonoBehaviour
 {
-    protected PlayerControls drive;
+    protected PlayerControls controls;
+    protected InputActionMap drive;
     protected InputAction throttle;
     protected InputAction brake;
     protected InputAction steer;
-
+    protected InputAction shift;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         
     }
 
     protected virtual void Awake()
     {
-        
+        controls = new PlayerControls();
+
+        drive = controls.Driving;
+        drive.Enable();
+        throttle = controls.Driving.Throttle;
+        brake = controls.Driving.Brake;
+        steer = controls.Driving.Steering;
+        shift = controls.Driving.Shifting;
     }
 
     protected virtual void OnEnable()
@@ -33,7 +41,7 @@ public class ControlsScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         
     }
