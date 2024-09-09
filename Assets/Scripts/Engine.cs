@@ -9,8 +9,6 @@ public class Engine : MonoBehaviour
     public float[] torqueValues;
     public int maxTorque;
     public float idleRPM;
-    public float ShiftUpRPM;
-    public float ShiftDownRPM;
 
     [Space]
 

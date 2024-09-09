@@ -5,10 +5,6 @@ using UnityEngine.InputSystem;
 
 public class TruckDrivetrain : ControlsScript
 {
-    public GameObject rightWheel;
-    public GameObject leftWheel;
-    [Space]
-
     [Header("Gearbox")]
     public float[] gearRatios;
     public float diffRatio;
@@ -18,7 +14,7 @@ public class TruckDrivetrain : ControlsScript
     [Space]
 
     [Header("Debug values")]
-    public int shiftValue;
+    public float shiftValue;
     public float throttleValue;
     public float brakeValue;
     public int currentGear;
@@ -42,8 +38,6 @@ public class TruckDrivetrain : ControlsScript
 
     protected Engine engine;
     protected Rigidbody rb;
-    protected WheelCollider rightCollider;
-    protected WheelCollider leftCollider;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -51,8 +45,7 @@ public class TruckDrivetrain : ControlsScript
         rb = GetComponent<Rigidbody>();
         engine = GetComponent<Engine>();
 
-        rightCollider = rightWheel.GetComponent<WheelCollider>();
-        leftCollider = leftWheel.GetComponent<WheelCollider>();
+        base.Start();
     }
 
     protected override void Awake()
@@ -80,23 +73,20 @@ public class TruckDrivetrain : ControlsScript
     {
         throttleValue = throttle.ReadValue<float>();
         brakeValue = brake.ReadValue<float>();
-        shiftValue = shift.ReadValue<int>();
+        shiftValue = shift.ReadValue<float>();
 
         DebugValues();
     }
 
     protected override void FixedUpdate()
     {
-        rightCollider.motorTorque = throttleValue * force;
-        leftCollider.motorTorque = throttleValue * force;
-
         rightRPM = rightCollider.rpm;
         leftRPM = leftCollider.rpm;
 
         float engineRPM = engine.GetCurrentRPM(rightRPM, leftRPM, 2);
     }
 
-    protected virtual float Shift(int gear, float[] ratios, float diffRatio, float delay)
+    protected virtual float Shift(int currentgear, int gears, int nextGear)
     {
         float currentRatio = 0;
 

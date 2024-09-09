@@ -5,6 +5,13 @@ using UnityEngine.InputSystem;
 
 public class ControlsScript : MonoBehaviour
 {
+    public GameObject rightWheel;
+    public GameObject leftWheel;
+    [Space]
+
+    protected WheelCollider rightCollider;
+    protected WheelCollider leftCollider;
+
     protected PlayerControls controls;
     protected InputActionMap drive;
     protected InputAction throttle;
@@ -15,7 +22,8 @@ public class ControlsScript : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        
+        rightCollider = rightWheel.GetComponent<WheelCollider>();
+        leftCollider = leftWheel.GetComponent<WheelCollider>();
     }
 
     protected virtual void Awake()

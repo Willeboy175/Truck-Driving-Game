@@ -6,17 +6,11 @@ using UnityEngine.InputSystem;
 
 public class TruckSteering : ControlsScript
 {
-    public GameObject rightWheel;
-    public GameObject leftWheel;
-
     public float outerSteerAngle;
     public float innerSteerAngle;
     public float steerSpeed;
 
     public bool invert;
-
-    private WheelCollider rightCollider;
-    private WheelCollider leftCollider;
 
     public float inputValue;
     public float steerValue;
@@ -24,8 +18,7 @@ public class TruckSteering : ControlsScript
     // Start is called before the first frame update
     protected override void Start()
     {
-        rightCollider = rightWheel.GetComponent<WheelCollider>();
-        leftCollider = leftWheel.GetComponent<WheelCollider>();
+        base.Start();
     }
 
     protected override void Awake()
