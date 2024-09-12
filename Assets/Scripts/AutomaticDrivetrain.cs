@@ -6,6 +6,10 @@ using UnityEngine.InputSystem;
 
 public class AutomaticDrivetrain : TruckDrivetrain
 {
+    public float upShiftRPM;
+    public float downShiftRPM;
+    public float engineClutchLockRPM;
+
     public int currentDriveMode;
     public bool shifting;
 
@@ -55,10 +59,12 @@ public class AutomaticDrivetrain : TruckDrivetrain
             shifting = false;
         }
 
-        //force = AutomaticShift(currentDriveMode, currentGear, gearRatios, shiftUpRPM, shiftDownRPM, engineRPM, engineTorque);
+        currentRatio = AutomaticShift();
+        currentEngineRPM = engine.GetCurrentRPM(rightRPM, leftRPM, currentRatio, throttleValue, engineClutchLockRPM);
+        currentEngineTorque = engine.GetCurrentTorque();
 
-        rightCollider.motorTorque = throttleValue * force;
-        leftCollider.motorTorque = throttleValue * force;
+        rightCollider.motorTorque = throttleValue * currentEngineTorque * currentRatio;
+        leftCollider.motorTorque = throttleValue * currentEngineTorque * currentRatio;
     }
 
     protected virtual int DriveMode(int currentMode, int modes, float shifting)
@@ -76,24 +82,31 @@ public class AutomaticDrivetrain : TruckDrivetrain
         return currentMode;
     }
 
-    protected virtual float AutomaticShift(int driveMode, int currentGear, float[] gears, float shiftUpRPM, float shiftDownRPM, float engineRPM, float engineTorque)
+    protected virtual float AutomaticShift()
     {
-        if (driveMode == 2) // Drive
+        if (currentDriveMode == 2) // Drive
         {
+            if (currentEngineRPM > upShiftRPM && currentGear < gearRatios.Length - 1) // Shift up
+            {
+                currentGear += 1;
+            }
+            else if (currentEngineRPM < downShiftRPM && currentGear > 0) // Shift down
+            {
+                currentGear -= 1;
+            }
 
+            currentRatio = gearRatios[currentGear] * diffRatio;
         }
 
-        if (driveMode == 1) // neutral
+        if (currentDriveMode == 1) // neutral
         {
-
+            currentRatio = 0;
         }
 
-        if (driveMode == 0) // Reverse
+        if (currentDriveMode == 0) // Reverse
         {
-
+            currentRatio = 0;
         }
-
-        float currentRatio = 0;
 
         return currentRatio;
     }

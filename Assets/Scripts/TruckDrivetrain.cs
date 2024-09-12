@@ -10,18 +10,20 @@ public class TruckDrivetrain : ControlsScript
     public float diffRatio;
     public float shiftDelay;
 
-    public float force;
+
     [Space]
 
     [Header("Debug values")]
     public float shiftValue;
     public float throttleValue;
     public float brakeValue;
+    public float currentRatio;
     public int currentGear;
     [Space]
 
     public double speed;
-
+    public float currentEngineRPM;
+    public float currentEngineTorque;
     public float rightRPM;
     public float leftRPM;
     [Space]
@@ -82,8 +84,6 @@ public class TruckDrivetrain : ControlsScript
     {
         rightRPM = rightCollider.rpm;
         leftRPM = leftCollider.rpm;
-
-        float engineRPM = engine.GetCurrentRPM(rightRPM, leftRPM, 2);
     }
 
     protected virtual float Shift(int currentgear, int gears, int nextGear)
