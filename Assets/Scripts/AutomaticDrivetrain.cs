@@ -6,10 +6,13 @@ using UnityEngine.InputSystem;
 
 public class AutomaticDrivetrain : TruckDrivetrain
 {
+    [Header("Automatic gearbox")]
     public float upShiftRPM;
     public float downShiftRPM;
     public float engineClutchLockRPM;
+    [Space]
 
+    [Header("Debug Values Automatic Drivetrain")]
     public int currentDriveMode;
     public bool shifting;
 

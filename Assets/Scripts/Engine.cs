@@ -14,16 +14,14 @@ public class Engine : MonoBehaviour
 
     public int maxTorque;
     public float idleRPM;
-    public Graph graph;
-
     [Space]
 
-    [Header("DebugValues")]
+    [Header("Debug Values Engine")]
     public float engineRPM;
     public float engineTorque;
     public float wheelRPM;
 
-    public float[,] engineTorqueAndRPM; // engineTorqueAndRPM[RPM, Torque]
+    private float[,] engineTorqueAndRPM; // engineTorqueAndRPM[RPM, Torque]
 
     // Start is called before the first frame update
     void Start()

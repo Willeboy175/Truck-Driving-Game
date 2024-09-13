@@ -9,34 +9,20 @@ public class TruckDrivetrain : ControlsScript
     public float[] gearRatios;
     public float diffRatio;
     public float shiftDelay;
-
-
     [Space]
 
-    [Header("Debug values")]
+    [Header("Debug Values Drivetrain")]
     public float shiftValue;
     public float throttleValue;
-    public float brakeValue;
+    [Space]
+
+    public double speed;
     public float currentRatio;
     public int currentGear;
     [Space]
 
-    public double speed;
     public float currentEngineRPM;
     public float currentEngineTorque;
-    public float rightRPM;
-    public float leftRPM;
-    [Space]
-
-    public float rightForwardforce;
-    public float leftForwardforce;
-
-    public float rightForwardSlip;
-    public float leftForwardSlip;
-    [Space]
-
-    public float rightSidewaysSlip;
-    public float leftSidewaysSlip;
 
     protected Engine engine;
     protected Rigidbody rb;
@@ -59,22 +45,20 @@ public class TruckDrivetrain : ControlsScript
     protected override void OnEnable()
     {
         throttle.Enable();
-        brake.Enable();
         shift.Enable();
     }
 
     protected override void OnDisable()
     {
         throttle.Disable();
-        brake.Disable();
         shift.Disable();
     }
 
     // Update is called once per frame
     protected override void Update()
     {
+        base.Update();
         throttleValue = throttle.ReadValue<float>();
-        brakeValue = brake.ReadValue<float>();
         shiftValue = shift.ReadValue<float>();
 
         DebugValues();
@@ -82,6 +66,7 @@ public class TruckDrivetrain : ControlsScript
 
     protected override void FixedUpdate()
     {
+        base.FixedUpdate();
         rightRPM = rightCollider.rpm;
         leftRPM = leftCollider.rpm;
     }
@@ -93,20 +78,9 @@ public class TruckDrivetrain : ControlsScript
         return currentRatio;
     }
 
-    protected virtual void DebugValues()
+    protected override void DebugValues()
     {
+        base.DebugValues();
         speed = rb.velocity.magnitude * 3.6;
-
-        rightCollider.GetGroundHit(out WheelHit rightHit);
-        leftCollider.GetGroundHit(out WheelHit leftHit);
-
-        rightForwardforce = rightHit.force;
-        leftForwardforce = leftHit.force;
-
-        rightForwardSlip = rightHit.forwardSlip;
-        leftForwardSlip = leftHit.forwardSlip;
-
-        rightSidewaysSlip = rightHit.sidewaysSlip;
-        leftSidewaysSlip = leftHit.sidewaysSlip;
     }
 }

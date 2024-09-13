@@ -6,13 +6,15 @@ using UnityEngine.InputSystem;
 
 public class TruckSteering : ControlsScript
 {
+    [Header("Steering")]
     public float outerSteerAngle;
     public float innerSteerAngle;
     public float steerSpeed;
-
     public bool invert;
+    [Space]
 
-    public float inputValue;
+    [Header("Debug Values Steering")]
+    public float inputSteerValue;
     public float steerValue;
 
     // Start is called before the first frame update
@@ -40,13 +42,15 @@ public class TruckSteering : ControlsScript
     // Update is called once per frame
     protected override void Update()
     {
-        inputValue = steer.ReadValue<float>();
-
-        steerValue = Mathf.MoveTowards(steerValue, inputValue, steerSpeed);
+        base.Update();
+        inputSteerValue = steer.ReadValue<float>();
     }
 
     protected override void FixedUpdate()
     {
+        base.FixedUpdate();
+        steerValue = Mathf.MoveTowards(steerValue, inputSteerValue, steerSpeed / 1000);
+
         WheelSteer(rightCollider, rightWheel, steerValue, outerSteerAngle, innerSteerAngle, invert, true); // Right wheel
         WheelSteer(leftCollider, leftWheel, steerValue, outerSteerAngle, innerSteerAngle, invert, false); // Left wheel
     }
