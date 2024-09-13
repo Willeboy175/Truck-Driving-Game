@@ -104,11 +104,21 @@ public class AutomaticDrivetrain : TruckDrivetrain
         if (currentDriveMode == 1) // neutral
         {
             currentRatio = 0;
+            currentGear = 0;
         }
 
         if (currentDriveMode == 0) // Reverse
         {
-            currentRatio = 0;
+            if (currentEngineRPM > upShiftRPM && currentGear < reverseGearRatios.Length - 1) // Shift up
+            {
+                currentGear += 1;
+            }
+            else if (currentEngineRPM < downShiftRPM && currentGear > 0) // Shift down
+            {
+                currentGear -= 1;
+            }
+
+            currentRatio = reverseGearRatios[currentGear] * diffRatio;
         }
 
         return currentRatio;

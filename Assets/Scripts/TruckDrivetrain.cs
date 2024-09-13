@@ -7,6 +7,7 @@ public class TruckDrivetrain : ControlsScript
 {
     [Header("Gearbox")]
     public float[] gearRatios;
+    public float[] reverseGearRatios;
     public float diffRatio;
     public float shiftDelay;
     [Space]
@@ -69,13 +70,6 @@ public class TruckDrivetrain : ControlsScript
         base.FixedUpdate();
         rightRPM = rightCollider.rpm;
         leftRPM = leftCollider.rpm;
-    }
-
-    protected virtual float Shift(int currentgear, int gears, int nextGear)
-    {
-        float currentRatio = 0;
-
-        return currentRatio;
     }
 
     protected override void DebugValues()

@@ -26,16 +26,14 @@ public class ControlsScript : MonoBehaviour
     protected WheelCollider rightCollider;
     protected WheelCollider leftCollider;
 
-    [SerializeReference]
     protected Transform rightModel;
-    [SerializeReference]
     protected Transform leftModel;
 
     protected WheelHit rightHit;
     protected WheelHit leftHit;
 
-    protected Vector3 rightpos;
-    protected Vector3 leftpos;
+    protected Vector3 rightPos;
+    protected Vector3 leftPos;
 
     protected PlayerControls controls;
     protected InputActionMap drive;
@@ -83,8 +81,11 @@ public class ControlsScript : MonoBehaviour
     {
         DebugValues();
 
-        rightModel.position = rightpos;
-        leftModel.position = leftpos;
+        rightModel.position = rightPos;
+        leftModel.position = leftPos;
+
+        rightModel.localPosition = new Vector3(0, rightModel.localPosition.y, 0);
+        leftModel.localPosition = new Vector3(0, leftModel.localPosition.y, 0);
     }
 
     protected virtual void FixedUpdate()
@@ -97,8 +98,8 @@ public class ControlsScript : MonoBehaviour
         rightCollider.GetGroundHit(out rightHit);
         leftCollider.GetGroundHit(out leftHit);
 
-        rightCollider.GetWorldPose(out rightpos, out Quaternion rightQuat);
-        leftCollider.GetWorldPose(out leftpos, out Quaternion leftqQuat);
+        rightCollider.GetWorldPose(out rightPos, out Quaternion rightQuat);
+        leftCollider.GetWorldPose(out leftPos, out Quaternion leftqQuat);
 
         rightForwardForce = rightHit.force;
         leftForwardForce = leftHit.force;

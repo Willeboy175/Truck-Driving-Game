@@ -11602,7 +11602,7 @@ Transform:
   m_GameObject: {fileID: 1308211125}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16749996, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.1675, z: 0}
   m_LocalScale: {x: 0.866, y: 0.1325, z: 0.866}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17539,7 +17539,7 @@ Transform:
   m_GameObject: {fileID: 94723870060493758}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.67, z: -6.15}
+  m_LocalPosition: {x: 0, y: 2.889, z: -6.15}
   m_LocalScale: {x: 2.546, y: 3.16, z: 7.36}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17613,6 +17613,9 @@ GameObject:
   - component: {fileID: 7619739448060877919}
   - component: {fileID: 7093786053644260317}
   - component: {fileID: 7619739448060877920}
+  - component: {fileID: 7619739448060877923}
+  - component: {fileID: 7619739448060877922}
+  - component: {fileID: 7619739448060877921}
   - component: {fileID: 2947350359428157508}
   m_Layer: 0
   m_Name: Trailer
@@ -17635,11 +17638,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightWheel: {fileID: 4055460733360817837}
   leftWheel: {fileID: 1260285612404229890}
-  shiftValue: 0
-  throttleValue: 0
-  brakeValue: 0
-  currentRatio: 0
-  currentGear: 0
   rightRPM: 0
   leftRPM: 0
   rightForwardForce: 0
@@ -17648,13 +17646,11 @@ MonoBehaviour:
   leftForwardSlip: 0
   rightSidewaySlip: 0
   leftSidewaySlip: 0
-  rightModel: {fileID: 0}
-  leftModel: {fileID: 0}
   outerSteerAngle: 44
   innerSteerAngle: 60
   steerSpeed: 20
   invert: 0
-  inputValue: 0
+  inputSteerValue: 0
   steerValue: 0
 --- !u!33 &754741441483805439
 MeshFilter:
@@ -19130,11 +19126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightWheel: {fileID: 5506535128691409777}
   leftWheel: {fileID: 8079144008092674400}
-  shiftValue: 0
-  throttleValue: 0
-  brakeValue: 0
-  currentRatio: 0
-  currentGear: 0
   rightRPM: 0
   leftRPM: 0
   rightForwardForce: 0
@@ -19143,8 +19134,6 @@ MonoBehaviour:
   leftForwardSlip: 0
   rightSidewaySlip: 0
   leftSidewaySlip: 0
-  rightModel: {fileID: 0}
-  leftModel: {fileID: 0}
   gearRatios:
   - 11.38
   - 9.23
@@ -19158,6 +19147,9 @@ MonoBehaviour:
   - 1.55
   - 1.23
   - 1
+  reverseGearRatios:
+  - -14.74
+  - -11.95
   diffRatio: 3.42
   shiftDelay: 0
   shiftValue: 0
@@ -19220,7 +19212,7 @@ Transform:
   m_GameObject: {fileID: 9165252179872237862}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.45, z: -1.1}
+  m_LocalPosition: {x: 0, y: 2.5, z: -1.1}
   m_LocalScale: {x: 2.45, y: 2.5, z: 2.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20150,11 +20142,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightWheel: {fileID: 3764208350800811130}
   leftWheel: {fileID: 373786162701565308}
-  shiftValue: 0
-  throttleValue: 0
-  brakeValue: 0
-  currentRatio: 0
-  currentGear: 0
   rightRPM: 0
   leftRPM: 0
   rightForwardForce: 0
@@ -20163,8 +20150,72 @@ MonoBehaviour:
   leftForwardSlip: 0
   rightSidewaySlip: 0
   leftSidewaySlip: 0
-  rightModel: {fileID: 0}
-  leftModel: {fileID: 0}
+--- !u!114 &7619739448060877921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705923858930936155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b10df7e590f24f439ec75ce8eec4f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightWheel: {fileID: 6834094180648751820}
+  leftWheel: {fileID: 7271645961643698435}
+  rightRPM: 0
+  leftRPM: 0
+  rightForwardForce: 0
+  leftForwardForce: 0
+  rightForwardSlip: 0
+  leftForwardSlip: 0
+  rightSidewaySlip: 0
+  leftSidewaySlip: 0
+--- !u!114 &7619739448060877922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705923858930936155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b10df7e590f24f439ec75ce8eec4f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightWheel: {fileID: 7579801468873999106}
+  leftWheel: {fileID: 36242156667028057}
+  rightRPM: 0
+  leftRPM: 0
+  rightForwardForce: 0
+  leftForwardForce: 0
+  rightForwardSlip: 0
+  leftForwardSlip: 0
+  rightSidewaySlip: 0
+  leftSidewaySlip: 0
+--- !u!114 &7619739448060877923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705923858930936155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b10df7e590f24f439ec75ce8eec4f95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightWheel: {fileID: 3556714071486028872}
+  leftWheel: {fileID: 2427349268758883029}
+  rightRPM: 0
+  leftRPM: 0
+  rightForwardForce: 0
+  leftForwardForce: 0
+  rightForwardSlip: 0
+  leftForwardSlip: 0
+  rightSidewaySlip: 0
+  leftSidewaySlip: 0
 --- !u!4 &7629666746599743938
 Transform:
   m_ObjectHideFlags: 0
@@ -20276,11 +20327,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightWheel: {fileID: 6249510469793472558}
   leftWheel: {fileID: 8224542768241636557}
-  shiftValue: 0
-  throttleValue: 0
-  brakeValue: 0
-  currentRatio: 0
-  currentGear: 0
   rightRPM: 0
   leftRPM: 0
   rightForwardForce: 0
@@ -20289,13 +20335,11 @@ MonoBehaviour:
   leftForwardSlip: 0
   rightSidewaySlip: 0
   leftSidewaySlip: 0
-  rightModel: {fileID: 0}
-  leftModel: {fileID: 0}
   outerSteerAngle: 15.4
   innerSteerAngle: 26.3
   steerSpeed: 20
   invert: 1
-  inputValue: 0
+  inputSteerValue: 0
   steerValue: 0
 --- !u!146 &7875070827202379843
 WheelCollider:
@@ -20465,6 +20509,7 @@ GameObject:
   - component: {fileID: 767229872498934947}
   - component: {fileID: 742084675867157179}
   - component: {fileID: 7801159651653333207}
+  - component: {fileID: 8940929572949774374}
   - component: {fileID: 8940929572949774373}
   - component: {fileID: 7062242306702995578}
   m_Layer: 0
@@ -20791,6 +20836,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &8940929572949774374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8404082605646748649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80a24b8e270f4e84e95206e0622a2434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frontalArea: 11.57471
+  cd: 0.7
 --- !u!1 &8985988968948298070
 GameObject:
   m_ObjectHideFlags: 0
