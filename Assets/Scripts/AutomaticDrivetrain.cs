@@ -15,6 +15,7 @@ public class AutomaticDrivetrain : TruckDrivetrain
     [Header("Debug Values Automatic Drivetrain")]
     public int currentDriveMode;
     public bool shifting;
+    public float currentWheelTorque;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -122,5 +123,12 @@ public class AutomaticDrivetrain : TruckDrivetrain
         }
 
         return currentRatio;
+    }
+
+    protected override void DebugValues()
+    {
+        base.DebugValues();
+
+        currentWheelTorque = throttleValue * currentEngineTorque * currentRatio;
     }
 }
