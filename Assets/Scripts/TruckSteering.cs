@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Animations;
-using UnityEngine.InputSystem;
 
-public class TruckSteering : ControlsScript
+public class TruckSteering : WheelScript
 {
     [Header("Steering")]
     public float outerSteerAngle;

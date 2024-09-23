@@ -27,7 +27,6 @@ public class AutomaticDrivetrain : TruckDrivetrain
         base.OnEnable();
 
         shift.started += OnShift;
-        shift.canceled += OnShift;
     }
 
     protected override void OnDisable()
@@ -35,7 +34,6 @@ public class AutomaticDrivetrain : TruckDrivetrain
         base.OnDisable();
 
         shift.started -= OnShift;
-        shift.canceled -= OnShift;
     }
 
     protected virtual void OnShift(InputAction.CallbackContext context)

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TruckBrakes : ControlsScript
+public class TruckBrakes : WheelScript
 {
     [Header("Brakes")]
     public float brakeTorque;
