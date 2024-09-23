@@ -62,6 +62,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""PlayerLook"",
+                    ""type"": ""Value"",
+                    ""id"": ""0a390d37-8c42-4187-8542-dabaa9c49d19"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Zoom"",
+                    ""type"": ""Value"",
+                    ""id"": ""e30535d9-00f3-414d-9367-8d4fa7cde4c7"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -91,6 +109,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""6070db2e-afc0-425c-b5e2-53e6aa642e70"",
                     ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Brake"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5405b2fc-97cc-427d-995a-32bd117167d8"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -240,6 +269,182 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Shifting"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Mouse"",
+                    ""id"": ""d67a5585-861b-44e9-816d-af95fb816057"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerLook"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""da35369d-bc23-42af-a3fa-5eb1a57bd518"",
+                    ""path"": ""<Mouse>/delta/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""2262f160-716e-44f9-bc26-e7be4ccb6dd4"",
+                    ""path"": ""<Mouse>/delta/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""f60578d6-19d9-491b-8be8-036568a6d61f"",
+                    ""path"": ""<Mouse>/delta/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""367d5e74-2ded-4f63-9245-90b4b86a9b5e"",
+                    ""path"": ""<Mouse>/delta/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Gamepad"",
+                    ""id"": ""7f13fb77-13a4-4c96-bc65-184d5df8613d"",
+                    ""path"": ""2DVector(mode=2)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerLook"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""972611dc-eeb3-40c7-9a4a-a8ba771d0671"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""ea6f439d-8f81-4fc1-a854-835881f4d189"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""ff50fcfc-281d-4a8b-9ced-3cfdf8e640d6"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""12f3d4ea-cfd9-462b-8db6-4be6f24c758d"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayerLook"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Mouse"",
+                    ""id"": ""a787282e-d357-49d7-8acc-026352acc51a"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""4c06b384-d876-42c4-8cfb-50f773aa16cc"",
+                    ""path"": ""<Mouse>/scroll/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""25d4d071-06d4-43c4-bc1c-d9cec9a4b902"",
+                    ""path"": ""<Mouse>/scroll/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Gamepad"",
+                    ""id"": ""6b42e151-ac58-4ae7-9aed-a55040b38f79"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""bd74291d-ebf8-43d8-be59-241db287c7ad"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""8948f6d8-e5a5-4c52-bf88-76d3f2e029d9"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -252,6 +457,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Driving_Brake = m_Driving.FindAction("Brake", throwIfNotFound: true);
         m_Driving_Steering = m_Driving.FindAction("Steering", throwIfNotFound: true);
         m_Driving_Shifting = m_Driving.FindAction("Shifting", throwIfNotFound: true);
+        m_Driving_PlayerLook = m_Driving.FindAction("PlayerLook", throwIfNotFound: true);
+        m_Driving_Zoom = m_Driving.FindAction("Zoom", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -317,6 +524,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Driving_Brake;
     private readonly InputAction m_Driving_Steering;
     private readonly InputAction m_Driving_Shifting;
+    private readonly InputAction m_Driving_PlayerLook;
+    private readonly InputAction m_Driving_Zoom;
     public struct DrivingActions
     {
         private @PlayerControls m_Wrapper;
@@ -325,6 +534,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Brake => m_Wrapper.m_Driving_Brake;
         public InputAction @Steering => m_Wrapper.m_Driving_Steering;
         public InputAction @Shifting => m_Wrapper.m_Driving_Shifting;
+        public InputAction @PlayerLook => m_Wrapper.m_Driving_PlayerLook;
+        public InputAction @Zoom => m_Wrapper.m_Driving_Zoom;
         public InputActionMap Get() { return m_Wrapper.m_Driving; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -346,6 +557,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Shifting.started += instance.OnShifting;
             @Shifting.performed += instance.OnShifting;
             @Shifting.canceled += instance.OnShifting;
+            @PlayerLook.started += instance.OnPlayerLook;
+            @PlayerLook.performed += instance.OnPlayerLook;
+            @PlayerLook.canceled += instance.OnPlayerLook;
+            @Zoom.started += instance.OnZoom;
+            @Zoom.performed += instance.OnZoom;
+            @Zoom.canceled += instance.OnZoom;
         }
 
         private void UnregisterCallbacks(IDrivingActions instance)
@@ -362,6 +579,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Shifting.started -= instance.OnShifting;
             @Shifting.performed -= instance.OnShifting;
             @Shifting.canceled -= instance.OnShifting;
+            @PlayerLook.started -= instance.OnPlayerLook;
+            @PlayerLook.performed -= instance.OnPlayerLook;
+            @PlayerLook.canceled -= instance.OnPlayerLook;
+            @Zoom.started -= instance.OnZoom;
+            @Zoom.performed -= instance.OnZoom;
+            @Zoom.canceled -= instance.OnZoom;
         }
 
         public void RemoveCallbacks(IDrivingActions instance)
@@ -385,5 +608,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnBrake(InputAction.CallbackContext context);
         void OnSteering(InputAction.CallbackContext context);
         void OnShifting(InputAction.CallbackContext context);
+        void OnPlayerLook(InputAction.CallbackContext context);
+        void OnZoom(InputAction.CallbackContext context);
     }
 }
