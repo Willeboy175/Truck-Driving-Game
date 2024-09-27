@@ -6,48 +6,78 @@ public class FinishScript : MonoBehaviour
 {
     public GameObject finishMenu;
 
-    public BoxCollider[] truckDetectors;
-    public BoxCollider[] trailerDetectors;
+    public Transform[] truckDetectors;
+    public Transform[] trailerDetectors;
 
-
+    public bool[] truckDetected;
+    public bool[] trailerDetected;
 
     // Start is called before the first frame update
     void Start()
     {
         finishMenu.SetActive(false);
-
-        for (int i = 0; i < truckDetectors.Length; i++)
-        {
-            truckDetectors[i] = GetComponent<BoxCollider>();
-        }
-
-        for (int i = 0; i < trailerDetectors.Length; i++)
-        {
-            trailerDetectors[i] = GetComponent<BoxCollider>();
-        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
+        DetectTruckAndTrailer();
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            print("player");
-        }
-
-        if (truckDetectors[0].CompareTag("Player") && truckDetectors[1].CompareTag("Player") && truckDetectors[2].CompareTag("Player") && truckDetectors[3].CompareTag("Player") &&
-            trailerDetectors[0].CompareTag("Trailer") && trailerDetectors[1].CompareTag("Trailer") && trailerDetectors[2].CompareTag("Trailer") && trailerDetectors[3].CompareTag("Trailer"))
+        if (truckDetected[0] && truckDetected[1] && truckDetected[2] && truckDetected[3] &&
+            trailerDetected[0] && trailerDetected[1] && trailerDetected[2] && trailerDetected[3])
         {
             Time.timeScale = 0;
             finishMenu.SetActive(true);
 
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+        }
+    }
+
+    void DetectTruckAndTrailer()
+    {
+        Ray[] truckRays = new Ray[4];
+        Ray[] trailerRays = new Ray[4];
+
+        RaycastHit[] truckHits = new RaycastHit[4];
+        RaycastHit[] trailerHits = new RaycastHit[4];
+
+        for (int i = 0; i < truckDetectors.Length; i++) // Detect Truck
+        {
+            truckRays[i] = new Ray(truckDetectors[i].position, transform.up);
+
+            Debug.DrawRay(truckDetectors[i].position, transform.up);
+
+            if (Physics.Raycast(truckRays[i], out truckHits[i], 1))
+            {
+                if (truckHits[i].transform.CompareTag("Truck"))
+                {
+                    truckDetected[i] = true;
+                }
+                else
+                {
+                    truckDetected[i] = false;
+                }
+            }
+        }
+
+        for (int i = 0; i < trailerDetectors.Length; i++) // Detect Trailer
+        {
+            trailerRays[i] = new Ray(trailerDetectors[i].position, transform.up);
+
+            Debug.DrawRay(trailerDetectors[i].position, transform.up);
+
+            if (Physics.Raycast(trailerRays[i], out trailerHits[i], 1))
+            {
+                if (trailerHits[i].transform.CompareTag("Trailer"))
+                {
+                    trailerDetected[i] = true;
+                }
+                else
+                {
+                    trailerDetected[i] = false;
+                }
+            }
         }
     }
 }
