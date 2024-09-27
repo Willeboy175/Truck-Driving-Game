@@ -8,7 +8,8 @@ public class Trailer : MonoBehaviour
     public Rigidbody rb;
     public Transform drawbar;
     public Transform dolly;
-    public WheelCollider[] wheels;
+    public WheelCollider[] dollyWheels;
+    public WheelCollider[] rearWheels;
 
     private Vector3 targetRotation;
 
@@ -34,9 +35,34 @@ public class Trailer : MonoBehaviour
 
         dolly.localEulerAngles = targetRotation;
 
-        for (int i = 0; i < wheels.Length; i++)
+        for (int i = 0; i < dollyWheels.Length; i++)
         {
-            wheels[i].steerAngle = targetRotation.y;
+            dollyWheels[i].steerAngle = targetRotation.y;
+        }
+
+        if (rb.velocity.magnitude < 0.1f)
+        {
+            for (int i = 0; i < dollyWheels.Length; i++)
+            {
+                dollyWheels[i].motorTorque = 1;
+            }
+
+            for (int i = 0; i < rearWheels.Length; i++)
+            {
+                rearWheels[i].motorTorque = -1;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < dollyWheels.Length; i++)
+            {
+                dollyWheels[i].motorTorque = 0;
+            }
+
+            for (int i = 0; i < rearWheels.Length; i++)
+            {
+                rearWheels[i].motorTorque = 0;
+            }
         }
     }
 }

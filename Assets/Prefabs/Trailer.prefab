@@ -681,11 +681,16 @@ MonoBehaviour:
   rb: {fileID: 5345652645830616734}
   drawbar: {fileID: 3551607726608463611}
   dolly: {fileID: 5515677396237226469}
-  wheels:
+  dollyWheels:
   - {fileID: 287709548006884163}
   - {fileID: 1986288396225866295}
   - {fileID: 9051004920965284641}
   - {fileID: 5883621650887218773}
+  rearWheels:
+  - {fileID: 890420992152634500}
+  - {fileID: 4601365399730528191}
+  - {fileID: 93196199790487986}
+  - {fileID: 452340140081218128}
 --- !u!153 &825924423729719941
 ConfigurableJoint:
   m_ObjectHideFlags: 0

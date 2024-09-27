@@ -441,7 +441,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 0.7
+    Value: 0.65
     m_SpeedMode: 0
     m_MaxSpeed: 2
     m_AccelTime: 0.2
@@ -495,11 +495,11 @@ MonoBehaviour:
   m_BindingMode: 1
   m_SplineCurvature: 1
   m_Orbits:
-  - m_Height: 30
+  - m_Height: 45
     m_Radius: 1
   - m_Height: 5
     m_Radius: 40
-  - m_Height: -10
+  - m_Height: -35
     m_Radius: 1
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
@@ -671,7 +671,7 @@ MonoBehaviour:
   m_HorizontalDamping: 1
   m_VerticalDamping: 1
   m_ScreenX: 0.5
-  m_ScreenY: 0.6
+  m_ScreenY: 0.5
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_SoftZoneWidth: 0.8
@@ -798,7 +798,7 @@ MonoBehaviour:
   m_HorizontalDamping: 1
   m_VerticalDamping: 1
   m_ScreenX: 0.5
-  m_ScreenY: 0.6
+  m_ScreenY: 0.5
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_SoftZoneWidth: 0.8
