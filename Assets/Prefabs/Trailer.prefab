@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1941731971377432622}
   m_Layer: 0
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2606,7 +2606,7 @@ GameObject:
   - component: {fileID: 9114139564157843884}
   m_Layer: 0
   m_Name: Drawbar
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
