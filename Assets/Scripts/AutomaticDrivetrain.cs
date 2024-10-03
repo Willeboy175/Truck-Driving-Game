@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -15,6 +16,12 @@ public class AutomaticDrivetrain : TruckDrivetrain
     public int currentDriveMode;
     public bool shifting;
     public float currentWheelTorque;
+
+    [Header("UI")]
+    public TextMeshProUGUI textDriveMode;
+    public TextMeshProUGUI textSpeed;
+    public TextMeshProUGUI textRPM;
+    public TextMeshProUGUI textGear;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -48,6 +55,8 @@ public class AutomaticDrivetrain : TruckDrivetrain
     protected override void Update()
     {
         base.Update();
+
+        UserInterface();
     }
 
     protected override void FixedUpdate()
@@ -120,6 +129,17 @@ public class AutomaticDrivetrain : TruckDrivetrain
         }
 
         return currentRatio;
+    }
+
+    protected virtual void UserInterface()
+    {
+        int roundedSpeed = Mathf.RoundToInt((float)speed);
+        textSpeed.SetText(roundedSpeed + " km/h");
+
+        int roundedRPM = Mathf.RoundToInt(currentEngineRPM);
+        textRPM.SetText(roundedRPM + " RPM");
+
+        textGear.SetText(currentGear + 1 + " Gear");
     }
 
     protected override void DebugValues()

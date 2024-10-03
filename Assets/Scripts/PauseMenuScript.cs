@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenuScript : ControlsScript
 {
     public GameObject pauseMenu;
+    public GameObject userInterface;
     public float pauseValue;
     public bool paused;
 
@@ -16,6 +17,7 @@ public class PauseMenuScript : ControlsScript
         paused = false;
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
+        userInterface.SetActive(true);
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -52,6 +54,7 @@ public class PauseMenuScript : ControlsScript
         {
             Time.timeScale = 0;
             pauseMenu.SetActive(true);
+            userInterface.SetActive(false);
 
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
@@ -60,6 +63,7 @@ public class PauseMenuScript : ControlsScript
         {
             Time.timeScale = 1;
             pauseMenu.SetActive(false);
+            userInterface.SetActive(true);
 
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
@@ -71,6 +75,7 @@ public class PauseMenuScript : ControlsScript
         paused = false;
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
+        userInterface.SetActive(true);
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;

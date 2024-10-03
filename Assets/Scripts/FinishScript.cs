@@ -5,6 +5,7 @@ using UnityEngine;
 public class FinishScript : MonoBehaviour
 {
     public GameObject finishMenu;
+    public GameObject userInterface;
 
     public Transform[] truckDetectors;
     public Transform[] trailerDetectors;
@@ -28,6 +29,7 @@ public class FinishScript : MonoBehaviour
         {
             Time.timeScale = 0;
             finishMenu.SetActive(true);
+            userInterface.SetActive(false);
 
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
