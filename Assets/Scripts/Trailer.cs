@@ -44,12 +44,26 @@ public class Trailer : MonoBehaviour
         {
             for (int i = 0; i < dollyWheels.Length; i++)
             {
-                dollyWheels[i].motorTorque = 1;
+                if (i > 1)
+                {
+                    dollyWheels[i].motorTorque = 1;
+                }
+                else
+                {
+                    dollyWheels[i].motorTorque = -1;
+                }
             }
 
             for (int i = 0; i < rearWheels.Length; i++)
             {
-                rearWheels[i].motorTorque = -1;
+                if (i > 1)
+                {
+                    rearWheels[i].motorTorque = 1;
+                }
+                else
+                {
+                    rearWheels[i].motorTorque = -1;
+                }
             }
         }
         else

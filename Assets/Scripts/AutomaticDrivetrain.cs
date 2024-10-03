@@ -18,9 +18,9 @@ public class AutomaticDrivetrain : TruckDrivetrain
     public float currentWheelTorque;
 
     [Header("UI")]
-    public TextMeshProUGUI textDriveMode;
     public TextMeshProUGUI textSpeed;
     public TextMeshProUGUI textRPM;
+    public TextMeshProUGUI textDriveMode;
     public TextMeshProUGUI textGear;
 
     // Start is called before the first frame update
@@ -108,13 +108,13 @@ public class AutomaticDrivetrain : TruckDrivetrain
             currentRatio = gearRatios[currentGear] * diffRatio;
         }
 
-        if (currentDriveMode == 1) // neutral
+        else if (currentDriveMode == 1) // neutral
         {
             currentRatio = 0;
             currentGear = 0;
         }
 
-        if (currentDriveMode == 0) // Reverse
+        else if (currentDriveMode == 0) // Reverse
         {
             if (currentEngineRPM > upShiftRPM && currentGear < reverseGearRatios.Length - 1) // Shift up
             {
@@ -134,12 +134,28 @@ public class AutomaticDrivetrain : TruckDrivetrain
     protected virtual void UserInterface()
     {
         int roundedSpeed = Mathf.RoundToInt((float)speed);
-        textSpeed.SetText(roundedSpeed + " km/h");
+        textSpeed.SetText("Speed: " + roundedSpeed + " km/h");
 
         int roundedRPM = Mathf.RoundToInt(currentEngineRPM);
-        textRPM.SetText(roundedRPM + " RPM");
+        textRPM.SetText("Engine: " + roundedRPM + " RPM");
 
-        textGear.SetText(currentGear + 1 + " Gear");
+        if (currentDriveMode == 2) // Drive
+        {
+            textDriveMode.SetText("Drivemode: D");
+            textGear.SetText("Gear: " + (currentGear + 1));
+        }
+
+        else if (currentDriveMode == 1) // neutral
+        {
+            textDriveMode.SetText("Drivemode: N");
+            textGear.SetText("Gear: " + currentGear);
+        }
+
+        else if (currentDriveMode == 0) // Reverse
+        {
+            textDriveMode.SetText("Drivemode: R");
+            textGear.SetText("Gear: R" + (currentGear + 1));
+        }
     }
 
     protected override void DebugValues()
