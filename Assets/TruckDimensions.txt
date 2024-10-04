@@ -60,7 +60,7 @@ torque_curve[]: (2600, 0)
 
 Växellåda: 
 
-differential_ratio: 3.42
+differential_ratio: 2.71
 
 # reverse gear
 ratios_reverse[0]: -14.74
