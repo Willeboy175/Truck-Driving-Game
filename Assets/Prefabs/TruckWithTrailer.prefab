@@ -48,7 +48,7 @@ WheelCollider:
     damper: 25000
     targetPosition: 0.4
   m_SuspensionDistance: 0.5
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.3
   m_Mass: 70
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -437,7 +437,7 @@ WheelCollider:
     damper: 25000
     targetPosition: 0.4
   m_SuspensionDistance: 0.5
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.3
   m_Mass: 70
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -656,7 +656,7 @@ WheelCollider:
     damper: 25000
     targetPosition: 0.4
   m_SuspensionDistance: 0.5
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.3
   m_Mass: 130
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -728,7 +728,7 @@ WheelCollider:
     damper: 25000
     targetPosition: 0.4
   m_SuspensionDistance: 0.5
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.3
   m_Mass: 130
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -988,7 +988,7 @@ WheelCollider:
     damper: 25000
     targetPosition: 0.4
   m_SuspensionDistance: 0.5
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.3
   m_Mass: 70
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -1143,7 +1143,7 @@ WheelCollider:
     damper: 25000
     targetPosition: 0.4
   m_SuspensionDistance: 0.5
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.3
   m_Mass: 70
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -1801,7 +1801,7 @@ MonoBehaviour:
   reverseGearRatios:
   - -14.74
   - -11.95
-  diffRatio: 3.42
+  diffRatio: 2.71
   shiftDelay: 0
   shiftValue: 0
   throttleValue: 0

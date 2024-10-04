@@ -269,7 +269,7 @@ WheelCollider:
     damper: 25000
     targetPosition: 0.4
   m_SuspensionDistance: 0.5
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.3
   m_Mass: 80
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -407,7 +407,7 @@ WheelCollider:
     damper: 25000
     targetPosition: 0.4
   m_SuspensionDistance: 0.5
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.3
   m_Mass: 80
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -608,6 +608,10 @@ GameObject:
   - component: {fileID: 3465174658910334443}
   - component: {fileID: 5345652645830616734}
   - component: {fileID: 4747747003549182236}
+  - component: {fileID: 2886526764689038243}
+  - component: {fileID: 4909990620497000127}
+  - component: {fileID: 5899802597934557480}
+  - component: {fileID: 1475767723139967506}
   - component: {fileID: 825924423729719941}
   m_Layer: 0
   m_Name: Trailer
@@ -691,6 +695,94 @@ MonoBehaviour:
   - {fileID: 4601365399730528191}
   - {fileID: 93196199790487986}
   - {fileID: 452340140081218128}
+--- !u!114 &2886526764689038243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3051928066568901530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a90a3ca54a16bb4ead5634f43dddca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightWheel: {fileID: 3476926617380452260}
+  leftWheel: {fileID: 4050606417444351767}
+  rightRPM: 0
+  leftRPM: 0
+  rightForwardForce: 0
+  leftForwardForce: 0
+  rightForwardSlip: 0
+  leftForwardSlip: 0
+  rightSidewaySlip: 0
+  leftSidewaySlip: 0
+--- !u!114 &4909990620497000127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3051928066568901530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a90a3ca54a16bb4ead5634f43dddca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightWheel: {fileID: 2462016680790744968}
+  leftWheel: {fileID: 8372713095687293692}
+  rightRPM: 0
+  leftRPM: 0
+  rightForwardForce: 0
+  leftForwardForce: 0
+  rightForwardSlip: 0
+  leftForwardSlip: 0
+  rightSidewaySlip: 0
+  leftSidewaySlip: 0
+--- !u!114 &5899802597934557480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3051928066568901530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a90a3ca54a16bb4ead5634f43dddca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightWheel: {fileID: 3128508504991219054}
+  leftWheel: {fileID: 3652969594672274188}
+  rightRPM: 0
+  leftRPM: 0
+  rightForwardForce: 0
+  leftForwardForce: 0
+  rightForwardSlip: 0
+  leftForwardSlip: 0
+  rightSidewaySlip: 0
+  leftSidewaySlip: 0
+--- !u!114 &1475767723139967506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3051928066568901530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a90a3ca54a16bb4ead5634f43dddca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightWheel: {fileID: 7516241243987484993}
+  leftWheel: {fileID: 2728420686990708192}
+  rightRPM: 0
+  leftRPM: 0
+  rightForwardForce: 0
+  leftForwardForce: 0
+  rightForwardSlip: 0
+  leftForwardSlip: 0
+  rightSidewaySlip: 0
+  leftSidewaySlip: 0
 --- !u!153 &825924423729719941
 ConfigurableJoint:
   m_ObjectHideFlags: 0
@@ -978,7 +1070,7 @@ WheelCollider:
     damper: 25000
     targetPosition: 0.4
   m_SuspensionDistance: 0.5
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.3
   m_Mass: 80
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -1083,7 +1175,7 @@ WheelCollider:
     damper: 25000
     targetPosition: 0.4
   m_SuspensionDistance: 0.5
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.3
   m_Mass: 80
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -1238,7 +1330,7 @@ WheelCollider:
     damper: 25000
     targetPosition: 0.4
   m_SuspensionDistance: 0.5
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.3
   m_Mass: 80
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -1697,7 +1789,7 @@ WheelCollider:
     damper: 25000
     targetPosition: 0.4
   m_SuspensionDistance: 0.5
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.3
   m_Mass: 80
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -2570,7 +2662,7 @@ WheelCollider:
     damper: 25000
     targetPosition: 0.4
   m_SuspensionDistance: 0.5
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.3
   m_Mass: 80
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -2785,7 +2877,7 @@ WheelCollider:
     damper: 25000
     targetPosition: 0.4
   m_SuspensionDistance: 0.5
-  m_ForceAppPointDistance: 0
+  m_ForceAppPointDistance: 0.3
   m_Mass: 80
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
@@ -2834,7 +2926,7 @@ Transform:
   m_GameObject: {fileID: 8473183355734715769}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.4, z: -8.25}
+  m_LocalPosition: {x: 0, y: 2.2, z: -8.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
