@@ -75,8 +75,8 @@ ratios_forward[4]: 4.63
 ratios_forward[5]: 3.75
 ratios_forward[6]: 3.03
 ratios_forward[7]: 2.46
-ratios_forward[8]: 1.91
-ratios_forward[9]: 1.55 #40kmh vid ca 1500 rpm
+ratios_forward[8]: 1.91 #40kmh vid ca 1500 rpm
+ratios_forward[9]: 1.55
 ratios_forward[10]: 1.23
 ratios_forward[11]: 1.0 #80kmh vid ca 1200 rpm
 

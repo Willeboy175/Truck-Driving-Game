@@ -334,7 +334,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.1925, z: 0}
-  m_LocalScale: {x: 0.995, y: 0.15749998, z: 0.995}
+  m_LocalScale: {x: 1.012, y: 0.15749998, z: 1.012}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7329664790255351196}
@@ -650,7 +650,7 @@ WheelCollider:
   m_GameObject: {fileID: 3874807544634793335}
   serializedVersion: 2
   m_Center: {x: -0.35, y: 0, z: 0}
-  m_Radius: 0.4975
+  m_Radius: 0.506
   m_SuspensionSpring:
     spring: 300000
     damper: 25000
@@ -660,10 +660,10 @@ WheelCollider:
   m_Mass: 130
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 2
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 2
+    m_ExtremumSlip: 0.8
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 1.6
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
@@ -722,7 +722,7 @@ WheelCollider:
   m_GameObject: {fileID: 4307524759121259558}
   serializedVersion: 2
   m_Center: {x: 0.35, y: 0, z: 0}
-  m_Radius: 0.4975
+  m_Radius: 0.506
   m_SuspensionSpring:
     spring: 300000
     damper: 25000
@@ -732,10 +732,10 @@ WheelCollider:
   m_Mass: 130
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
-    m_ExtremumSlip: 0.4
-    m_ExtremumValue: 2
-    m_AsymptoteSlip: 0.8
-    m_AsymptoteValue: 2
+    m_ExtremumSlip: 0.8
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 1.6
+    m_AsymptoteValue: 1
     m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.2
@@ -885,7 +885,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.1925, z: 0}
-  m_LocalScale: {x: 0.995, y: 0.15749998, z: 0.995}
+  m_LocalScale: {x: 1.012, y: 0.15749998, z: 1.012}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7329664790255351196}
@@ -1192,7 +1192,7 @@ Transform:
   m_GameObject: {fileID: 5211349863544528911}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4975, z: -6.21}
+  m_LocalPosition: {x: 0, y: 0.506, z: -6.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1228,7 +1228,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.1925, z: 0}
-  m_LocalScale: {x: 0.995, y: 0.15749995, z: 0.995}
+  m_LocalScale: {x: 1.012, y: 0.15749995, z: 1.012}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3112298918515603217}
@@ -1596,7 +1596,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.1925, z: 0}
-  m_LocalScale: {x: 0.995, y: 0.15749995, z: 0.995}
+  m_LocalScale: {x: 1.012, y: 0.15749995, z: 1.012}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3112298918515603217}
@@ -1720,7 +1720,7 @@ Transform:
   m_GameObject: {fileID: 8270692544852619213}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 350.145, y: 2, z: 68}
+  m_LocalPosition: {x: 350.145, y: 1, z: 68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1816,6 +1816,10 @@ MonoBehaviour:
   currentDriveMode: 1
   shifting: 0
   currentWheelTorque: 0
+  textSpeed: {fileID: 0}
+  textRPM: {fileID: 0}
+  textDriveMode: {fileID: 0}
+  textGear: {fileID: 0}
 --- !u!114 &919741578668044423
 MonoBehaviour:
   m_ObjectHideFlags: 0

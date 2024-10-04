@@ -88,6 +88,6 @@ public class PauseMenuScript : ControlsScript
 
     public void Exit()
     {
-        print("Exit to main menu");
+        SceneManager.LoadScene("MainMenuScene");
     }
 }
