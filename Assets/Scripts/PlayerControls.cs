@@ -486,6 +486,134 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Cameras"",
+            ""id"": ""da685fe1-6793-4dd2-ae93-20d4e17e6837"",
+            ""actions"": [
+                {
+                    ""name"": ""Cam1"",
+                    ""type"": ""Button"",
+                    ""id"": ""b062a1af-5d25-4c02-9962-0812183370b6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cam2"",
+                    ""type"": ""Button"",
+                    ""id"": ""88568e4f-e78a-4f8d-8798-3c894563b232"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cam3"",
+                    ""type"": ""Button"",
+                    ""id"": ""04d7a9d3-2fea-4ba1-91c5-fd835abbf6ba"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cam4"",
+                    ""type"": ""Button"",
+                    ""id"": ""1e82d6ef-1d37-4c4b-8881-4cb358318d5d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cam5"",
+                    ""type"": ""Button"",
+                    ""id"": ""99962fac-250b-46a9-8045-aa63ce4063cb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cam6"",
+                    ""type"": ""Button"",
+                    ""id"": ""1d25e58c-335a-4b12-8335-45bc53e689dc"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""5ddab129-b8ee-42cb-8a1c-05736a2d697a"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cam1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1b2cd2cb-f09d-4b32-b391-5c2a45771e28"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cam2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""74239f71-4688-423a-b6d2-cf2f0d5542bd"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cam3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""08303a20-0138-4bc5-a939-16f4dbc88c8c"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cam4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""df3b32ab-88f4-4a48-bb18-481448a5a75f"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cam5"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""292f9906-f67c-4904-a462-8076679301f8"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cam6"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -501,6 +629,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         // Menus
         m_Menus = asset.FindActionMap("Menus", throwIfNotFound: true);
         m_Menus_GoBack = m_Menus.FindAction("GoBack", throwIfNotFound: true);
+        // Cameras
+        m_Cameras = asset.FindActionMap("Cameras", throwIfNotFound: true);
+        m_Cameras_Cam1 = m_Cameras.FindAction("Cam1", throwIfNotFound: true);
+        m_Cameras_Cam2 = m_Cameras.FindAction("Cam2", throwIfNotFound: true);
+        m_Cameras_Cam3 = m_Cameras.FindAction("Cam3", throwIfNotFound: true);
+        m_Cameras_Cam4 = m_Cameras.FindAction("Cam4", throwIfNotFound: true);
+        m_Cameras_Cam5 = m_Cameras.FindAction("Cam5", throwIfNotFound: true);
+        m_Cameras_Cam6 = m_Cameras.FindAction("Cam6", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -690,6 +826,92 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     }
     public MenusActions @Menus => new MenusActions(this);
+
+    // Cameras
+    private readonly InputActionMap m_Cameras;
+    private List<ICamerasActions> m_CamerasActionsCallbackInterfaces = new List<ICamerasActions>();
+    private readonly InputAction m_Cameras_Cam1;
+    private readonly InputAction m_Cameras_Cam2;
+    private readonly InputAction m_Cameras_Cam3;
+    private readonly InputAction m_Cameras_Cam4;
+    private readonly InputAction m_Cameras_Cam5;
+    private readonly InputAction m_Cameras_Cam6;
+    public struct CamerasActions
+    {
+        private @PlayerControls m_Wrapper;
+        public CamerasActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Cam1 => m_Wrapper.m_Cameras_Cam1;
+        public InputAction @Cam2 => m_Wrapper.m_Cameras_Cam2;
+        public InputAction @Cam3 => m_Wrapper.m_Cameras_Cam3;
+        public InputAction @Cam4 => m_Wrapper.m_Cameras_Cam4;
+        public InputAction @Cam5 => m_Wrapper.m_Cameras_Cam5;
+        public InputAction @Cam6 => m_Wrapper.m_Cameras_Cam6;
+        public InputActionMap Get() { return m_Wrapper.m_Cameras; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(CamerasActions set) { return set.Get(); }
+        public void AddCallbacks(ICamerasActions instance)
+        {
+            if (instance == null || m_Wrapper.m_CamerasActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_CamerasActionsCallbackInterfaces.Add(instance);
+            @Cam1.started += instance.OnCam1;
+            @Cam1.performed += instance.OnCam1;
+            @Cam1.canceled += instance.OnCam1;
+            @Cam2.started += instance.OnCam2;
+            @Cam2.performed += instance.OnCam2;
+            @Cam2.canceled += instance.OnCam2;
+            @Cam3.started += instance.OnCam3;
+            @Cam3.performed += instance.OnCam3;
+            @Cam3.canceled += instance.OnCam3;
+            @Cam4.started += instance.OnCam4;
+            @Cam4.performed += instance.OnCam4;
+            @Cam4.canceled += instance.OnCam4;
+            @Cam5.started += instance.OnCam5;
+            @Cam5.performed += instance.OnCam5;
+            @Cam5.canceled += instance.OnCam5;
+            @Cam6.started += instance.OnCam6;
+            @Cam6.performed += instance.OnCam6;
+            @Cam6.canceled += instance.OnCam6;
+        }
+
+        private void UnregisterCallbacks(ICamerasActions instance)
+        {
+            @Cam1.started -= instance.OnCam1;
+            @Cam1.performed -= instance.OnCam1;
+            @Cam1.canceled -= instance.OnCam1;
+            @Cam2.started -= instance.OnCam2;
+            @Cam2.performed -= instance.OnCam2;
+            @Cam2.canceled -= instance.OnCam2;
+            @Cam3.started -= instance.OnCam3;
+            @Cam3.performed -= instance.OnCam3;
+            @Cam3.canceled -= instance.OnCam3;
+            @Cam4.started -= instance.OnCam4;
+            @Cam4.performed -= instance.OnCam4;
+            @Cam4.canceled -= instance.OnCam4;
+            @Cam5.started -= instance.OnCam5;
+            @Cam5.performed -= instance.OnCam5;
+            @Cam5.canceled -= instance.OnCam5;
+            @Cam6.started -= instance.OnCam6;
+            @Cam6.performed -= instance.OnCam6;
+            @Cam6.canceled -= instance.OnCam6;
+        }
+
+        public void RemoveCallbacks(ICamerasActions instance)
+        {
+            if (m_Wrapper.m_CamerasActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(ICamerasActions instance)
+        {
+            foreach (var item in m_Wrapper.m_CamerasActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_CamerasActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public CamerasActions @Cameras => new CamerasActions(this);
     public interface IDrivingActions
     {
         void OnThrottle(InputAction.CallbackContext context);
@@ -702,5 +924,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     public interface IMenusActions
     {
         void OnGoBack(InputAction.CallbackContext context);
+    }
+    public interface ICamerasActions
+    {
+        void OnCam1(InputAction.CallbackContext context);
+        void OnCam2(InputAction.CallbackContext context);
+        void OnCam3(InputAction.CallbackContext context);
+        void OnCam4(InputAction.CallbackContext context);
+        void OnCam5(InputAction.CallbackContext context);
+        void OnCam6(InputAction.CallbackContext context);
     }
 }
