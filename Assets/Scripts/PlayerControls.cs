@@ -544,6 +544,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cam7"",
+                    ""type"": ""Button"",
+                    ""id"": ""2345fb0e-2b76-4ce3-8b17-99fd333d1a1d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Cam8"",
+                    ""type"": ""Button"",
+                    ""id"": ""8ab484c6-8657-42fd-981e-608cdf4a4372"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -612,6 +630,28 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Cam6"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5d91a717-4672-49b5-9787-72cb35ac02da"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cam7"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""972861b2-d1a4-415b-8d0b-36bf1939963e"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cam8"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -637,6 +677,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Cameras_Cam4 = m_Cameras.FindAction("Cam4", throwIfNotFound: true);
         m_Cameras_Cam5 = m_Cameras.FindAction("Cam5", throwIfNotFound: true);
         m_Cameras_Cam6 = m_Cameras.FindAction("Cam6", throwIfNotFound: true);
+        m_Cameras_Cam7 = m_Cameras.FindAction("Cam7", throwIfNotFound: true);
+        m_Cameras_Cam8 = m_Cameras.FindAction("Cam8", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -836,6 +878,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Cameras_Cam4;
     private readonly InputAction m_Cameras_Cam5;
     private readonly InputAction m_Cameras_Cam6;
+    private readonly InputAction m_Cameras_Cam7;
+    private readonly InputAction m_Cameras_Cam8;
     public struct CamerasActions
     {
         private @PlayerControls m_Wrapper;
@@ -846,6 +890,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Cam4 => m_Wrapper.m_Cameras_Cam4;
         public InputAction @Cam5 => m_Wrapper.m_Cameras_Cam5;
         public InputAction @Cam6 => m_Wrapper.m_Cameras_Cam6;
+        public InputAction @Cam7 => m_Wrapper.m_Cameras_Cam7;
+        public InputAction @Cam8 => m_Wrapper.m_Cameras_Cam8;
         public InputActionMap Get() { return m_Wrapper.m_Cameras; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -873,6 +919,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Cam6.started += instance.OnCam6;
             @Cam6.performed += instance.OnCam6;
             @Cam6.canceled += instance.OnCam6;
+            @Cam7.started += instance.OnCam7;
+            @Cam7.performed += instance.OnCam7;
+            @Cam7.canceled += instance.OnCam7;
+            @Cam8.started += instance.OnCam8;
+            @Cam8.performed += instance.OnCam8;
+            @Cam8.canceled += instance.OnCam8;
         }
 
         private void UnregisterCallbacks(ICamerasActions instance)
@@ -895,6 +947,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Cam6.started -= instance.OnCam6;
             @Cam6.performed -= instance.OnCam6;
             @Cam6.canceled -= instance.OnCam6;
+            @Cam7.started -= instance.OnCam7;
+            @Cam7.performed -= instance.OnCam7;
+            @Cam7.canceled -= instance.OnCam7;
+            @Cam8.started -= instance.OnCam8;
+            @Cam8.performed -= instance.OnCam8;
+            @Cam8.canceled -= instance.OnCam8;
         }
 
         public void RemoveCallbacks(ICamerasActions instance)
@@ -933,5 +991,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnCam4(InputAction.CallbackContext context);
         void OnCam5(InputAction.CallbackContext context);
         void OnCam6(InputAction.CallbackContext context);
+        void OnCam7(InputAction.CallbackContext context);
+        void OnCam8(InputAction.CallbackContext context);
     }
 }

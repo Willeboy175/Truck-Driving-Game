@@ -13,6 +13,7 @@ public class SwitchCam : MonoBehaviour
     public CinemachineVirtualCamera cinemaCam4;
     public CinemachineVirtualCamera cinemaCam5;
     public CinemachineVirtualCamera cinemaCam6;
+    public CinemachineVirtualCamera cinemaCam7;
 
     private CinemachineBrain brain;
 
@@ -25,6 +26,8 @@ public class SwitchCam : MonoBehaviour
     private InputAction cam4;
     private InputAction cam5;
     private InputAction cam6;
+    private InputAction cam7;
+    private InputAction cam8;
 
     // Start is called before the first frame update
     void Start()
@@ -43,6 +46,8 @@ public class SwitchCam : MonoBehaviour
         cam4 = controls.Cameras.Cam4;
         cam5 = controls.Cameras.Cam5;
         cam6 = controls.Cameras.Cam6;
+        cam7 = controls.Cameras.Cam7;
+        cam8 = controls.Cameras.Cam8;
     }
 
     private void OnEnable()
@@ -53,6 +58,8 @@ public class SwitchCam : MonoBehaviour
         cam4.Enable();
         cam5.Enable();
         cam6.Enable();
+        cam7.Enable();
+        cam8.Enable();
     }
 
     private void OnDisable()
@@ -63,6 +70,8 @@ public class SwitchCam : MonoBehaviour
         cam4.Disable();
         cam5.Disable();
         cam6.Disable();
+        cam7.Disable();
+        cam8.Disable();
     }
 
     // Update is called once per frame
@@ -100,7 +109,20 @@ public class SwitchCam : MonoBehaviour
 
         if (cam6.triggered)
         {
-            
+            brain.ActiveVirtualCamera.Priority = 10;
+            cinemaCam5.Priority = 11;
+        }
+
+        if (cam7.triggered)
+        {
+            brain.ActiveVirtualCamera.Priority = 10;
+            cinemaCam6.Priority = 11;
+        }
+
+        if (cam8.triggered)
+        {
+            brain.ActiveVirtualCamera.Priority = 10;
+            cinemaCam7.Priority = 11;
         }
     }
 }

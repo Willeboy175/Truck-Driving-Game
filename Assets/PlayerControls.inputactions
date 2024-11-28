@@ -522,6 +522,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Cam7",
+                    "type": "Button",
+                    "id": "2345fb0e-2b76-4ce3-8b17-99fd333d1a1d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Cam8",
+                    "type": "Button",
+                    "id": "8ab484c6-8657-42fd-981e-608cdf4a4372",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -588,6 +606,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Cam6",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5d91a717-4672-49b5-9787-72cb35ac02da",
+                    "path": "<Keyboard>/7",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cam7",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "972861b2-d1a4-415b-8d0b-36bf1939963e",
+                    "path": "<Keyboard>/8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cam8",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
