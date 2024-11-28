@@ -9,6 +9,10 @@ public class SwitchCam : MonoBehaviour
     public CinemachineFreeLook thirdPersonCam;
     public CinemachineVirtualCamera cinemaCam1;
     public CinemachineVirtualCamera cinemaCam2;
+    public CinemachineVirtualCamera cinemaCam3;
+    public CinemachineVirtualCamera cinemaCam4;
+    public CinemachineVirtualCamera cinemaCam5;
+    public CinemachineVirtualCamera cinemaCam6;
 
     private CinemachineBrain brain;
 
@@ -84,12 +88,14 @@ public class SwitchCam : MonoBehaviour
 
         if (cam4.triggered)
         {
-            
+            brain.ActiveVirtualCamera.Priority = 10;
+            cinemaCam3.Priority = 11;
         }
 
         if (cam5.triggered)
         {
-            
+            brain.ActiveVirtualCamera.Priority = 10;
+            cinemaCam4.Priority = 11;
         }
 
         if (cam6.triggered)
