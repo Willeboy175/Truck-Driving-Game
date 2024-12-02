@@ -83,7 +83,9 @@ public class PauseMenuScript : ControlsScript
 
     public void Restart()
     {
-        SceneManager.LoadScene("GameScene");
+        string sceneName=SceneManager.GetActiveScene().name;
+
+        SceneManager.LoadScene(sceneName);
     }
 
     public void Exit()
